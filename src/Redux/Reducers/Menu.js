@@ -30,8 +30,9 @@ const initialState = [
 function menuReducer(state = initialState, action) {
   switch (action.type) {
     case DECREASE_QUANTITY:
+      let mainIndex = state.findIndex(e => e.id === action.id) 
       return state.map((item, index) => {
-        if (index === action.index && item.quantity) {
+        if (index === mainIndex && item.quantity) {
           return Object.assign({}, item, {
             quantity: item.quantity - 1
           })
@@ -39,8 +40,9 @@ function menuReducer(state = initialState, action) {
         return item
       })
     case INCREASE_QUANTITY:
+      mainIndex = state.findIndex(e => e.id === action.id) 
       return state.map((item, index) => {
-        if (index === action.index && item.quantity < 20) {
+        if (index === mainIndex && item.quantity < 20) {
           return Object.assign({}, item, {
             quantity: item.quantity + 1
           })

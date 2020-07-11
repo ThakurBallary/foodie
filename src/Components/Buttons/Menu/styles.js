@@ -4,7 +4,13 @@ export default StyleSheet.create({
     container: {
         elevation: 4,
         borderRadius: 4,
-        marginBottom: 16
+        marginBottom: 16,
+        shadowOffset: {
+            width: 2,
+            height: 2
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 4
     },
     actionContainer: {
         flexDirection: 'row',

@@ -24,7 +24,7 @@ function Orders({ orders }) {
           data={showOrders}
           extraData={showOrders}
           keyExtractor={dish => dish.id.toString()}
-          renderItem={({ item, index }) => <DishCard dish={item} index={index} chat={true} />}
+          renderItem={({ item }) => <DishCard dish={item} chat={true} />}
           ItemSeparatorComponent={() => <View style={styles.separator} />}
         />
       </View>

@@ -16,7 +16,7 @@ function Menu({ menu }) {
         data={menu}
         extraData={menu}
         keyExtractor={dish => dish.id.toString()}
-        renderItem={({item, index})=> <DishCard dish={item} index={index} /> }
+        renderItem={({item})=> <DishCard dish={item} /> }
         />
     </View>
   )

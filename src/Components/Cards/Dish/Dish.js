@@ -8,7 +8,7 @@ import { decreaseQuantity, increaseQuantity } from '../../../Redux/Actions'
 import { QuantityButton, AddButton } from '../../Buttons'
 import styles from './styles'
 
-function DishCard({ dish, index, decreaseQuantity, increaseQuantity, chat }) {
+function DishCard({ dish, decreaseQuantity, increaseQuantity, chat }) {
     return (
         <View style={styles.container}>
             <View style={styles.left}>
@@ -28,11 +28,11 @@ function DishCard({ dish, index, decreaseQuantity, increaseQuantity, chat }) {
                         ?
                         <QuantityButton
                             quantity={dish.quantity}
-                            decrease={() => decreaseQuantity(index)}
-                            increase={() => increaseQuantity(index)}
+                            decrease={() => decreaseQuantity(dish.id)}
+                            increase={() => increaseQuantity(dish.id)}
                         />
                         :
-                        <AddButton onPress={() => increaseQuantity(index)} />
+                        <AddButton onPress={() => increaseQuantity(dish.id)} />
                 }
                 {
                     chat
